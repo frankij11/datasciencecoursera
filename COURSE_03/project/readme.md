@@ -2,6 +2,15 @@
 
 This repo contains the R scripts to get and clean the UCI HAR Dataset. 
 
+The [run_analysis.R](run_analysis.R) file contains the source code to complete all tasks. Running the file will:
+1. download the dataset
+2. clean the data
+3. export data frames to csv
+
+```R
+source("run_analysis.R")
+```
+
 ## Tasks
 
 1. Merges the training and the test sets to create one data set.
