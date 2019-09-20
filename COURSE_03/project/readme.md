@@ -1,8 +1,6 @@
 # Getting and Cleaning Data Course project
 
-This repo contains the R scripts to get and clean the UCI HAR Dataset. 
-
-The [run_analysis.R](run_analysis.R) file contains the source code to complete all tasks. Running the file will:
+This repo contains the R scripts to get and clean the UCI HAR Dataset. The [run_analysis.R](run_analysis.R) file contains the source code to complete all tasks. Running the file will:
 1. download the dataset
 2. clean the data
 3. export data frames to csv
