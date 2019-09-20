@@ -21,6 +21,6 @@ source("run_analysis.R")
 
 ## Outputs
 
-1. **master_data.csv**: *This file contains the tidy data set after completing steps 1 - 4*
+1. **[master_data.csv](data/master_data.csv)**: *This file contains the tidy data set after completing steps 1 - 4*
 
-2. **summary_data.csv**: *This file contains the summary tidy data set after completing step 5*
+2. **[summary_data.csv](data/summary_data.csv)**: *This file contains the summary tidy data set after completing step 5*
