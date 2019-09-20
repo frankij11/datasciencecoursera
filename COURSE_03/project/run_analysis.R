@@ -35,7 +35,7 @@ activity_labels =  read.table(file.path(data_dir, "UCI HAR Dataset/activity_labe
 #load Train data
 y_train = read.table(file.path(data_dir, "UCI HAR Dataset/train/y_train.txt"), col.names = "Y")
 X_train = read.table(file.path(data_dir, "UCI HAR Dataset/train/X_train.txt"), col.names = X_names)
-X_train 
+
 subject_train = read.table(file.path(data_dir, "UCI HAR Dataset/train/subject_train.txt"), col.names = "subject")
 
 #load Test data
@@ -74,6 +74,13 @@ master_data = janitor::clean_names(master_data)
 
 #master_data = cbind(master_data$test_train, master_data[,2:count(names(master_data))])
 #Task 5: Create a secon, indpendent tidy data set with avg variable for each activity and each subject
+summary_data = master_data %>%
+  group_by(activity_label, subject) %>%
+  summarise_all(mean)
 
+#Task 6: Export data to csv
+write.csv(master_data, file.path(data_dir, "master_data.csv"))
+write.csv(summary_data, file.path(data_dir, "summary_data.csv"))
 
 setwd(original_wd)
+
