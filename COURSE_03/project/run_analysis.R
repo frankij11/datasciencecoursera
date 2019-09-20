@@ -1,7 +1,7 @@
 library(dplyr)
 library(janitor)
 original_wd = getwd()
-proj_dir = file.path("3_Getting_Cleaning_Data", "project")
+proj_dir = getwd() #file.path("3_Getting_Cleaning_Data", "project")
 data_dir = file.path(proj_dir, "data")
 
 #Task 0.1: Download data
@@ -79,8 +79,8 @@ summary_data = master_data %>%
   summarise_all(mean)
 
 #Task 6: Export data to csv
-write.csv(master_data, file.path(data_dir, "master_data.csv"))
-write.csv(summary_data, file.path(data_dir, "summary_data.csv"))
+write.csv(master_data, "master_data.csv")
+write.csv(summary_data,  "summary_data.csv")
 
 setwd(original_wd)
 
