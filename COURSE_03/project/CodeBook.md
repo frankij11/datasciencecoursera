@@ -33,11 +33,18 @@ The experiments have been carried out with a group of 30 volunteers within an ag
  
 ## Transformations to clean up the data
 - download data
- - combine y variable, x variables and subject information into one data frame to facilitate analysis
- - combine test and training data into one data frame
-- clean data
- - filter x variables name to only include those with mean or std in their name
+    - combine y variable, x variables and subject information into one data frame to facilitate analysis
+    - combine test and training data into one data frame    
+    - clean data
+      filter x variables name to only include those with mean or std in their name
  - clean variable names
+   ```R
+   master_data = janitor::clean_names(master_data)
+   names(master_data) = gsub("acc", "acceleration", names(master_data))
+   names(master_data) = gsub("mag", "magnitude", names(master_data))
+   names(master_data) = gsub("^t", "time", names(master_data))
+   names(master_data) = gsub("^f", "frequency", names(master_data))
+   ```
 - summarise data
- - group by activity and subject
- - take mean of all measures
+    - group by activity and subject
+    - take mean of all measures
