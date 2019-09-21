@@ -83,7 +83,7 @@ summary_data = master_data %>%
   summarise_all(mean)
 
 #Task 6: Export data to csv
-write.table(names(master_data), "features.csv", row.names = FALSE )
+write.table(names(master_data), "features.csv", row.names = FALSE , col.names=FALSE)
 write.csv(master_data, "master_data.csv")
 write.csv(summary_data,  "summary_data.csv")
 
