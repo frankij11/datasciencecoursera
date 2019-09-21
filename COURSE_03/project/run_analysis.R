@@ -71,6 +71,10 @@ master_data = select(master_data, -one_of(X_names_drop))
 #Task 4: Use Descriptive Variable names
 #clean names
 master_data = janitor::clean_names(master_data)
+names(master_data) = gsub("acc", "acceleration", names(master_data))
+names(master_data) = gsub("mag", "magnitude", names(master_data))
+names(master_data) = gsub("^t", "time", names(master_data))
+names(master_data) = gsub("^f", "frequency", names(master_data))
 
 #master_data = cbind(master_data$test_train, master_data[,2:count(names(master_data))])
 #Task 5: Create a secon, indpendent tidy data set with avg variable for each activity and each subject
@@ -79,6 +83,7 @@ summary_data = master_data %>%
   summarise_all(mean)
 
 #Task 6: Export data to csv
+write.table(names(master_data), "features.csv", row.names = FALSE )
 write.csv(master_data, "master_data.csv")
 write.csv(summary_data,  "summary_data.csv")
 
