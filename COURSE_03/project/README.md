@@ -22,3 +22,5 @@ source("run_analysis.R")
 1. **[master_data.csv](master_data.csv)**: *This file contains the tidy data set after completing steps 1 - 4*
 
 2. **[summary_data.csv](summary_data.csv)**: *This file contains the summary tidy data set after completing step 5*
+
+3. **[features.csv](features.csv)**: This file contains a list of the variables
